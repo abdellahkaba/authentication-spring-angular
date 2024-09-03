@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mini-ecommerce
+    username: isi
+    password: isi
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: isi
+    password: isi
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimout: 5000
+        timout: 3000
+        writetimout: 5000
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E327E235753872F413F4428472B4B62506453667566B5970
+      expiration: 8640000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activation-account
+
+server:
+  port: 8088
